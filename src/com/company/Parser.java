@@ -18,12 +18,12 @@ public class Parser {
     }
 
     public static Todo createTodo(String fullCommand){
-        Todo todoTask = new Todo(fullCommand.replace("todo", "").trim());
+        Todo todoTask = new Todo(fullCommand.trim());
         return todoTask;
     }
 
     public static Deadline createDeadline(String fullCommand, String by){
-        Deadline deadline = new Deadline(fullCommand.replace("deadline", "").substring(0, fullCommand.indexOf("/by")).trim(), by);
+        Deadline deadline = new Deadline(fullCommand,by);
         return deadline;
     }
 }
