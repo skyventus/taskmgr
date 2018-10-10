@@ -11,7 +11,6 @@ public class TaskManager {
 
     public TaskManager(String filepath){
         ui = new Ui();
-        System.out.println(filepath);
         storage = new Storage(filepath);
         try {
             tasks = storage.load();
@@ -40,6 +39,7 @@ public class TaskManager {
                     case ("deadline"):
                         String by = fullCommand.substring(fullCommand.indexOf("/by")).replace("/by", "").trim();
                         Description=fullCommand.replace(commandWord, "").substring(0, fullCommand.indexOf("/by")).trim();
+                        System.out.println(Description);
                         tasks.addTask(Parser.createDeadline(Description, by));
                         break;
                     case ("print"):
@@ -68,6 +68,6 @@ public class TaskManager {
     }
 
     public static void main(String[] args) {
-        new TaskManager("data/test.txt").run();
+        new TaskManager("data/test2.txt").run();
     }
 }

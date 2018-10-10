@@ -21,6 +21,9 @@ public class Storage {
         Scanner s = new Scanner(f); // create a Scanner using the File as the source
         int idx = 1;
         tasks = new Tasklist();
+        if(! s.hasNext()){
+            throw new TaskManagerException("Error reading the file");
+        }
         while(s.hasNext()){
             task = s.nextLine().split(Pattern.quote("|"));
             try{

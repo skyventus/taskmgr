@@ -1,2 +1,0 @@
-T | 1 | submit
-D | 0 | this report /by this | this friday
