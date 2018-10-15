@@ -1,4 +1,7 @@
-package com.company;
+package oliviercheah.tojava.Utils;
+import oliviercheah.tojava.taskmanager.TaskManagerException;
+import oliviercheah.tojava.taskmanager.Tasklist;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,7 +18,7 @@ public class Storage {
         this.filePath = filePath;
     };
 
-    public Tasklist load() throws IOException, TaskManagerException{
+    public Tasklist load() throws IOException, TaskManagerException {
         String[] task;
         File f = new File(filePath); // create a File for the given file path
         Scanner s = new Scanner(f); // create a Scanner using the File as the source

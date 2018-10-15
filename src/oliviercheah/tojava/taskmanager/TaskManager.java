@@ -1,4 +1,8 @@
-package com.company;
+package oliviercheah.tojava.taskmanager;
+import oliviercheah.tojava.Utils.Parser;
+import oliviercheah.tojava.Utils.Storage;
+import oliviercheah.tojava.Utils.Ui;
+
 import java.io.IOException;
 import java.lang.*;
 
@@ -33,12 +37,16 @@ public class TaskManager {
             try {
                 switch (commandWord) {
                     case ("todo"):
-                       Description=fullCommand.replace(commandWord, "");
+                        Description=fullCommand.replace(commandWord, "");
+                        if(Description.isEmpty())
+                            throw new TaskManagerException("Error: Did not input any tasks");
                         tasks.addTask(Parser.createTodo(Description));
                         break;
                     case ("deadline"):
                         String by = fullCommand.substring(fullCommand.indexOf("/by")).replace("/by", "").trim();
-                        Description=fullCommand.replace(commandWord, "").substring(0, fullCommand.indexOf("/by")).trim();
+                        Description=fullCommand.substring(0, fullCommand.indexOf("/by")).replace(commandWord, "").trim();
+                        if(Description.isEmpty())
+                            throw new TaskManagerException("Error: Did not input any tasks");
                         System.out.println(Description);
                         tasks.addTask(Parser.createDeadline(Description, by));
                         break;
@@ -47,14 +55,22 @@ public class TaskManager {
                         break;
                     case ("done"):
                         int idx = Integer.parseInt(fullCommand.replace("done", "").trim());
+                        if(tasks.isEmpty())
+                            throw new TaskManagerException("WARNING: The list is empty. Nothing to be mark as done.");
                         tasks.completedTask(idx);
                         break;
                     case ("save"):
+                        if(tasks.isEmpty())
+                            throw new TaskManagerException("WARNING: The list is empty. No tasks to be saved.");
                         storage.save(tasks);
                         break;
                 }
             }catch(StringIndexOutOfBoundsException e){
-                Ui.printError("Missing Parameter");
+                Ui.printError("ERROR: Please remember to add in /by <when is the deadline>.");
+            } catch (TaskManagerException e) {
+                Ui.printError(e.getMessage());
+            }catch(NumberFormatException e){
+                Ui.printError("ERROR: Please key in the task number that you want to mark as complete.");
             }
 
             fullCommand = ui.readUserCommand().toLowerCase();
@@ -68,6 +84,6 @@ public class TaskManager {
     }
 
     public static void main(String[] args) {
-        new TaskManager("data/test2.txt").run();
+        new TaskManager("data/test.txt").run();
     }
 }

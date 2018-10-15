@@ -1,4 +1,4 @@
-package com.company;
+package oliviercheah.tojava.taskmanager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +9,6 @@ public class Tasklist {
     public Tasklist(){
         this.tasks = new ArrayList<>();
     }
-
 
     public void addTask(Task task){
         //tasks.add(task);
@@ -26,11 +25,16 @@ public class Tasklist {
         return tasks.size();
     }
     public void printTasks() {
+        if(tasks.isEmpty())
+            System.out.println("No tasks has been added to the list yet.");
         for (int i = 0; i < tasks.size(); i++) {
             System.out.println("[" + (i + 1) + "] " + tasks.get(i).toString());
         }
     }
 
+    public boolean isEmpty(){
+        return tasks.isEmpty();
+    }
     public void completedTask(int idx){
         tasks.get(idx-1).setDone(true);
     }

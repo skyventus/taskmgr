@@ -1,11 +1,14 @@
-package com.company;
+package oliviercheah.tojava.Utils;
+
+import oliviercheah.tojava.taskmanager.Deadline;
+import oliviercheah.tojava.taskmanager.Todo;
 
 public class Parser {
 
     public static String getCommandWord(String fullCommand){
         String[] task;
 
-        fullCommand.toLowerCase();
+        fullCommand=fullCommand.toLowerCase().trim();
 
         task = fullCommand.split(" ");
         try {

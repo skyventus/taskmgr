@@ -1,4 +1,4 @@
-package com.company;
+package oliviercheah.tojava.Utils;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class Ui {
     }
 
     public static void printWelcome(){
-        System.out.println("Welcoem to task manager lvl 6!");
+        System.out.println("Welcome to task manager lvl 6!");
     }
 
     public static void printError(String message) {

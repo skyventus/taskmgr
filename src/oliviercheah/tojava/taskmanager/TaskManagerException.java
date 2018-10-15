@@ -1,4 +1,4 @@
-package com.company;
+package oliviercheah.tojava.taskmanager;
 
 public class TaskManagerException extends Exception {
     private final String message;
