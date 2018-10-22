@@ -1,7 +1,13 @@
 package oliviercheah.tojava.Utils;
 
 import oliviercheah.tojava.taskmanager.Deadline;
+import oliviercheah.tojava.taskmanager.Task;
+import oliviercheah.tojava.taskmanager.TaskManagerException;
 import oliviercheah.tojava.taskmanager.Todo;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Parser {
 
@@ -25,8 +31,8 @@ public class Parser {
         return todoTask;
     }
 
-    public static Deadline createDeadline(String fullCommand, String by){
-        Deadline deadline = new Deadline(fullCommand,by);
+    public static Deadline createDeadline(String fullCommand, Date by){
+        Deadline deadline = new Deadline(fullCommand, by);
         return deadline;
     }
 }

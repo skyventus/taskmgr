@@ -5,6 +5,9 @@ import oliviercheah.tojava.taskmanager.Tasklist;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -33,7 +36,9 @@ public class Storage {
                 if (task[0].trim().equals("T")) {
                     tasks.addTask(Parser.createTodo(task[2]));
                 } else if (task[0].trim().equals("D")) {
-                    tasks.addTask(Parser.createDeadline(task[2].trim(), task[3].trim()));
+                    SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+                    Date date = df.parse(task[3].trim());
+                    tasks.addTask(Parser.createDeadline(task[2].trim(), date));
                 }
                 if (task[1].contains("1")) {
                     tasks.completedTask(idx);
@@ -41,6 +46,8 @@ public class Storage {
                 idx++;
             }catch (StringIndexOutOfBoundsException e){
                 e.getMessage();
+            } catch (ParseException e) {
+                e.printStackTrace();
             }
         }
         return this.tasks;
@@ -48,6 +55,7 @@ public class Storage {
 
     public void save(Tasklist tasks){
         FileWriter fw = null;
+
         try {
             fw = new FileWriter(filePath);
             for(int i=0; i<tasks.getSize(); i++){

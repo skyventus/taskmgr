@@ -2,29 +2,34 @@ package oliviercheah.tojava.taskmanager;
 
 public class Todo extends Task {
 
-    private boolean isDone;
+    private boolean done;
 
     public Todo(String Desc){
         super(Desc);
-        isDone=false;
+        done=false;
     }
 
+    @Override
     public boolean isDone(){
-        return this.isDone;
+        return this.done;
     }
 
+    @Override
     public void setDone(boolean d){
-        this.isDone=d;
+        this.done=d;
     }
 
     @Override
     public String toString() {
-        return super.toString() + System.lineSeparator() +  "Is Done? " + (isDone ? "Yes" : "No");
+        return super.toString() + System.lineSeparator() +  "Is Done? " + (done ? "Yes" : "No");
     }
 
     @Override
+    public boolean nearDeadline(){return false;}
+
+    @Override
     public String save(){
-        return "T | " + (isDone ? "1" : "0")+ " | " + super.save() + "\n";
+        return "T | " + (done ? "1" : "0")+ " | " + super.save() + "\n";
     }
 
 

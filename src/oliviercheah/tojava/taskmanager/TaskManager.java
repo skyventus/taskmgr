@@ -1,10 +1,14 @@
 package oliviercheah.tojava.taskmanager;
+import jdk.nashorn.internal.runtime.ParserException;
 import oliviercheah.tojava.Utils.Parser;
 import oliviercheah.tojava.Utils.Storage;
 import oliviercheah.tojava.Utils.Ui;
 
 import java.io.IOException;
 import java.lang.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class TaskManager {
@@ -18,6 +22,10 @@ public class TaskManager {
         storage = new Storage(filepath);
         try {
             tasks = storage.load();
+            Ui.showToUser("Number of Completed Task: " + tasks.numberOfCompletedTask());
+            Ui.showToUser("Number of Incompleted Task: " + tasks.numberOfInompletedTask());
+            Ui.showToUser("Total number of task recorded: " + tasks.getSize());
+            tasks.getExpiry();
         } catch (TaskManagerException e) {
             ui.showToUser("Problem reading file. Starting with an empty task list");
             tasks = new Tasklist();
@@ -31,6 +39,7 @@ public class TaskManager {
         ui.printWelcome();
 
         String Description;
+        int idx;
         String fullCommand = ui.readUserCommand().toLowerCase();
         String commandWord = Parser.getCommandWord(fullCommand);
         while(!commandWord.equals("exit")) {
@@ -45,16 +54,29 @@ public class TaskManager {
                     case ("deadline"):
                         String by = fullCommand.substring(fullCommand.indexOf("/by")).replace("/by", "").trim();
                         Description=fullCommand.substring(0, fullCommand.indexOf("/by")).replace(commandWord, "").trim();
-                        if(Description.isEmpty())
-                            throw new TaskManagerException("Error: Did not input any tasks");
-                        System.out.println(Description);
-                        tasks.addTask(Parser.createDeadline(Description, by));
+                        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+                        Date date;
+                        try{
+                            if(Description.isEmpty())
+                                throw new TaskManagerException("Error: Did not input any tasks");
+                            //System.out.println(Description);
+                                date = df.parse(by);
+                            tasks.addTask(Parser.createDeadline(Description, date));
+                            }catch(ParseException e){
+                                Ui.printError("Please ensure the Date format is dd-mm-yyyy");
+                    }
                         break;
                     case ("print"):
                         tasks.printTasks();
                         break;
+                    case ("update"):
+                        idx = Integer.parseInt(fullCommand.replace("update","").trim());
+                        Ui.showToUser("What is the new task?u");
+                        Description=ui.readUserCommand();
+                        tasks.updateTask(idx, Description);
+                        break;
                     case ("done"):
-                        int idx = Integer.parseInt(fullCommand.replace("done", "").trim());
+                        idx = Integer.parseInt(fullCommand.replace("done", "").trim());
                         if(tasks.isEmpty())
                             throw new TaskManagerException("WARNING: The list is empty. Nothing to be mark as done.");
                         tasks.completedTask(idx);
@@ -63,6 +85,9 @@ public class TaskManager {
                         if(tasks.isEmpty())
                             throw new TaskManagerException("WARNING: The list is empty. No tasks to be saved.");
                         storage.save(tasks);
+                        break;
+                    default:
+                        Ui.showToUser("No such command exist.");
                         break;
                 }
             }catch(StringIndexOutOfBoundsException e){

@@ -1,8 +1,8 @@
 package oliviercheah.tojava.taskmanager;
 
-public class Task {
+public abstract class Task {
     protected String description;
-    protected boolean isDone;
+    //protected boolean isDone;
 
     public Task(String description) {
         this.description = description;
@@ -12,14 +12,17 @@ public class Task {
         return description;
     }
 
-    public void setDone(boolean isDone){
-        this.isDone=isDone;
-    }
+    public void updateTask(String description){this.description = description;}
+
+    public abstract boolean isDone();
+
+    public abstract void setDone(boolean isDone);
+//    public abstract String getBy();
     @Override
     public String toString() {
         return "description: " + description;
     }
-
+    public abstract boolean nearDeadline();
     public String save(){
         return description;
     }
