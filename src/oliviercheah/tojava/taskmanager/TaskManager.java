@@ -71,7 +71,7 @@ public class TaskManager {
                         break;
                     case ("update"):
                         idx = Integer.parseInt(fullCommand.replace("update","").trim());
-                        Ui.showToUser("What is the new task?u");
+                        Ui.showToUser("What is the new task?");
                         Description=ui.readUserCommand();
                         tasks.updateTask(idx, Description);
                         break;
@@ -86,8 +86,15 @@ public class TaskManager {
                             throw new TaskManagerException("WARNING: The list is empty. No tasks to be saved.");
                         storage.save(tasks);
                         break;
+                    case ("delete"):
+                        if(tasks.isEmpty())
+                            throw new TaskManagerException("WARNING: The list is empty. No tasks to be deleted.");
+                        idx = Integer.parseInt(fullCommand.replace("delete", "").trim());
+                        tasks.deleteTask(idx);
+                        break;
                     default:
-                        Ui.showToUser("No such command exist.");
+
+                        Ui.showToUser("No such command exist. test");
                         break;
                 }
             }catch(StringIndexOutOfBoundsException e){

@@ -28,8 +28,11 @@ public class Todo extends Task {
     public boolean nearDeadline(){return false;}
 
     @Override
+    public int getDueDays(){return 0;}
+
+    @Override
     public String save(){
-        return "T | " + (done ? "1" : "0")+ " | " + super.save() + "\n";
+        return "T | " + (done ? "1" : "0")+ " | " + super.description + "\n";
     }
 
 

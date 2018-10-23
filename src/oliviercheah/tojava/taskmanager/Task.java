@@ -23,8 +23,6 @@ public abstract class Task {
         return "description: " + description;
     }
     public abstract boolean nearDeadline();
-    public String save(){
-        return description;
-    }
-
+    public abstract String save();
+    public abstract int getDueDays();
 }

@@ -42,9 +42,19 @@ public class Deadline extends Todo {
         long diff =  deadline.getTime()-today.getTime();
         int diffDays=(int) (diff/(24*60*60*1000));
 
-        if(diffDays<=7 && diffDays>=0)
+        if(diffDays<=7)
             return  true;
         else
             return false;
+    }
+
+    @Override
+    public int getDueDays(){
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date today= new Date();
+        long diff =  deadline.getTime()-today.getTime();
+        int diffDays=(int) (diff/(24*60*60*1000));
+
+        return diffDays;
     }
 }

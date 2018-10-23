@@ -1,4 +1,5 @@
 package oliviercheah.tojava.Utils;
+import oliviercheah.tojava.taskmanager.Task;
 import oliviercheah.tojava.taskmanager.TaskManagerException;
 import oliviercheah.tojava.taskmanager.Tasklist;
 
@@ -54,8 +55,7 @@ public class Storage {
     }
 
     public void save(Tasklist tasks){
-        FileWriter fw = null;
-
+        FileWriter fw ;
         try {
             fw = new FileWriter(filePath);
             for(int i=0; i<tasks.getSize(); i++){
@@ -67,5 +67,6 @@ public class Storage {
         } catch (ArrayIndexOutOfBoundsException e){
             e.getMessage();
         }
+
     }
 }

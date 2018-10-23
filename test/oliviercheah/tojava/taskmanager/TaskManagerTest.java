@@ -5,6 +5,10 @@ import oliviercheah.tojava.Utils.Parser;
 import oliviercheah.tojava.taskmanager.Todo;
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import static org.junit.Assert.*;
 
 public class TaskManagerTest {
@@ -25,11 +29,18 @@ public class TaskManagerTest {
 
     }
 
-//    @Test
-//    public void createDeadline(){
-//        Deadline actual = Parser.createDeadline("submit book", "this friday");
-//        Deadline expected = new Deadline("submit book", "this friday");
-//        assertEquals(actual.toString(), expected.toString());
-//    }
+    @Test
+    public void createDeadline(){
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            Date by = df.parse("11-11-2018");
+            Deadline actual = Parser.createDeadline("submit book", by);
+            Deadline expected = new Deadline("submit book", by);
+            assertEquals(actual.toString(), expected.toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

@@ -18,6 +18,7 @@ public class Tasklist {
 
     public String saveTask(int idx){
         String value = tasks.get(idx).save();
+        //System.out.println(value);
         return value;
     }
 
@@ -65,14 +66,22 @@ public class Tasklist {
 
     public void updateTask(int idx, String desc){
         tasks.get(idx-1).updateTask(desc);
-        System.out.println("Update completed");
+        System.out.println("Update completed.");
     }
 
     public void getExpiry() {
         for(Task task: tasks) {
             if(task.nearDeadline() && !task.isDone()){
-                System.out.println("Task [" + (tasks.indexOf(task)+1)+"]: " + System.lineSeparator() + task.toString() + System.lineSeparator() + " deadline is less than 7 days");
+                if(task.getDueDays()>=0)
+                    System.out.println("Task [" + (tasks.indexOf(task)+1)+"]: " + System.lineSeparator() + task.toString() + System.lineSeparator() + "Deadline is less than 7 days");
+                else
+                    System.out.println("Task [" + (tasks.indexOf(task)+1)+"]: " + "overdue by " + (task.getDueDays()*-1) + " day");
             }
         }
+    }
+
+    public void deleteTask(int idx){
+        tasks.remove(tasks.get(idx-1));
+        System.out.println("Task has been deleted.");
     }
 }
