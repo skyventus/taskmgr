@@ -25,13 +25,17 @@ public class Todo extends Task {
     }
 
     @Override
-    public boolean nearDeadline(){return false;}
+    public boolean nearDeadline(){
+        return false;
+    }
 
     @Override
-    public int getDueDays(){return 0;}
+    public int getDueDays(){
+        return 0;
+    }
 
     @Override
-    public String save(){
+    public String saveTask(){
         return "T | " + (done ? "1" : "0")+ " | " + super.description + "\n";
     }
 

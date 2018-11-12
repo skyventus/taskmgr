@@ -1,12 +1,8 @@
-package oliviercheah.tojava.Utils;
+package oliviercheah.tojava.utils;
 
 import oliviercheah.tojava.taskmanager.Deadline;
-import oliviercheah.tojava.taskmanager.Task;
-import oliviercheah.tojava.taskmanager.TaskManagerException;
 import oliviercheah.tojava.taskmanager.Todo;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Parser {

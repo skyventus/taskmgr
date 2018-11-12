@@ -17,25 +17,26 @@ public class Tasklist {
     }
 
     public String saveTask(int idx){
-        String value = tasks.get(idx).save();
+        String value = tasks.get(idx).saveTask();
         //System.out.println(value);
         return value;
-    }
-
-    public int getSize(){
-        return tasks.size();
     }
 
     public void printTasks() {
         if(tasks.isEmpty())
             System.out.println("No tasks has been added to the list yet.");
         int i=0;
-
         for(Task task: tasks) {
             System.out.println("[" + (i + 1) + "] " + task.toString());
             i++;
         }
     }
+
+    public int getSize(){
+        return tasks.size();
+    }
+
+
 
     public boolean isEmpty(){
         return tasks.isEmpty();
@@ -66,7 +67,7 @@ public class Tasklist {
 
     public void updateTask(int idx, String desc){
         tasks.get(idx-1).updateTask(desc);
-        System.out.println("Update completed.");
+        System.out.println("Task Update completed.");
     }
 
     public void getExpiry() {

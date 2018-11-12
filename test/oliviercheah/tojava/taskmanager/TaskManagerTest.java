@@ -1,8 +1,6 @@
 package oliviercheah.tojava.taskmanager;
 
-import oliviercheah.tojava.taskmanager.Deadline;
-import oliviercheah.tojava.Utils.Parser;
-import oliviercheah.tojava.taskmanager.Todo;
+import oliviercheah.tojava.utils.Parser;
 import org.junit.Test;
 
 import java.text.ParseException;

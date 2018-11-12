@@ -1,5 +1,4 @@
-package oliviercheah.tojava.Utils;
-import oliviercheah.tojava.taskmanager.Task;
+package oliviercheah.tojava.utils;
 import oliviercheah.tojava.taskmanager.TaskManagerException;
 import oliviercheah.tojava.taskmanager.Tasklist;
 
@@ -8,7 +7,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -66,6 +67,18 @@ public class Storage {
             e.getMessage();
         } catch (ArrayIndexOutOfBoundsException e){
             e.getMessage();
+        }
+
+    }
+
+    public void listFiles(){
+        File[] files = new File(filePath).listFiles();
+        int i = 1;
+        for(File file: files){
+            if(file.isFile())
+                System.out.println(i+". "+file.getName());
+
+            i++;
         }
 
     }

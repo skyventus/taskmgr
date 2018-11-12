@@ -15,14 +15,6 @@ public class Deadline extends Todo {
         this.deadline = deadline;
     }
 
-//    public String getBy(){
-//        return deadline;
-//    }
-//
-//    public void setBy(String s){
-//        this.deadline=s;
-//    }
-
     @Override
     public String toString() {
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
@@ -30,7 +22,7 @@ public class Deadline extends Todo {
     }
 
     @Override
-    public String save(){
+    public String saveTask(){
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         return "D | " + (super.isDone() ? "1" : "0") + " | " + super.getDescription() + " | " + df.format(deadline) + "\n";
     }
