@@ -21,7 +21,7 @@ public class TaskManager {
         ui = new Ui();
         storage = new Storage(filepath);
         storage.listFiles();
-        Ui.showToUser("Please key in the filename to load.");
+        Ui.showToUser("Please key in the filename or the new filename that you want to create/load.");
 
         String choice = ui.readUserChoice().toLowerCase();
 
@@ -29,8 +29,11 @@ public class TaskManager {
                 Ui.showToUser("Please key in the filename or the new filename that you want to create/load.");
                 choice = ui.readUserChoice().toLowerCase();
         }try {
-                if(! choice.contains(".txt"))
+                if(! choice.contains(".txt") && !choice.contains("exit"))
                     choice = choice+".txt";
+                else {
+                    System.exit(0);
+                }
                 tasks=storage.load(filepath+"/"+choice);
                 Ui.showToUser("Number of Completed Task: " + tasks.numberOfCompletedTask());
                 Ui.showToUser("Number of Incompleted Task: " + tasks.numberOfInompletedTask());
@@ -107,6 +110,9 @@ public class TaskManager {
                             throw new TaskManagerException("[WARNING] The list is empty. No tasks to be deleted.");
                         idx = Integer.parseInt(fullCommand.replace("delete", "").trim());
                         tasks.deleteTask(idx);
+                        break;
+                    case ("help"):
+                        Ui.showCommands();
                         break;
                     default:
                         Ui.showToUser("[WARNING] No such command exist.");

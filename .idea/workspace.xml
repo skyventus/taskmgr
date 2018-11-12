@@ -6,12 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5e1900a-864f-428a-9f03-96fc9a97bc71" name="Default Changelist" comment="">
+    <list default="true" id="f5e1900a-864f-428a-9f03-96fc9a97bc71" name="Default Changelist" comment="Changes:&#10;* addded new functionality. &#10;- will let user decide which file to load&#10;- will save to that file after that too. &#10;- if file doesn't exist, it will create it.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/task.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oliviercheah/tojava/utils/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oliviercheah/tojava/utils/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oliviercheah/tojava/utils/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oliviercheah/tojava/utils/Ui.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,15 +46,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="java" value="15434" />
+          <entry key="java" value="15814" />
           <entry key="regexp" value="51" />
-          <entry key="txt" value="756" />
+          <entry key="txt" value="924" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="15434" />
-          <entry key="PLAIN_TEXT" value="764" />
+          <entry key="JAVA" value="15814" />
+          <entry key="PLAIN_TEXT" value="932" />
           <entry key="RegExp" value="51" />
         </counts>
       </usages-collector>
@@ -83,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/TaskManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+            <state relative-caret-position="136">
+              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6260#6261#0" expanded="true" />
@@ -133,8 +131,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/oliviercheah/tojava/utils/Ui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="111">
+              <caret line="30" column="35" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -220,9 +218,9 @@
         <option value="$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/Tasklist.java" />
         <option value="$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/Todo.java" />
         <option value="$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/Deadline.java" />
-        <option value="$PROJECT_DIR$/src/oliviercheah/tojava/utils/Ui.java" />
         <option value="$PROJECT_DIR$/src/oliviercheah/tojava/utils/Parser.java" />
         <option value="$PROJECT_DIR$/src/oliviercheah/tojava/utils/Storage.java" />
+        <option value="$PROJECT_DIR$/src/oliviercheah/tojava/utils/Ui.java" />
         <option value="$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/TaskManager.java" />
       </list>
     </option>
@@ -278,6 +276,14 @@
             </path>
             <path>
               <item name="TaskMgr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskMgr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="oliviercheah" type="462c0819:PsiDirectoryNode" />
+              <item name="tojava" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskMgr" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -309,7 +315,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542004408637" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542005169867" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last.edited.regexp" value="|123|123" />
@@ -524,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541995886748</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Changes:&#10;* addded new functionality. &#10;- will let user decide which file to load&#10;- will save to that file after that too. &#10;- if file doesn't exist, it will create it.">
+      <created>1542004487184</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1542004487184</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -560,7 +573,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119717000" />
+    <option name="totallyTimeSpent" value="120481000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -573,10 +586,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49803922" weight="0.3409396" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.3409396" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49607843" visible="true" weight="0.3409396" />
+      <window_info id="Structure" order="1" sideWeight="0.50392157" side_tool="true" weight="0.3409396" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -584,7 +596,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32963988" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4986577" visible="true" weight="0.2936288" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" visible="true" weight="0.2936288" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -650,7 +662,8 @@
     <MESSAGE value="Changes:&#10;* Compiled as JAR" />
     <MESSAGE value="Changes:&#10;* Compiled as JAR&#10;* Updated with new exit method" />
     <MESSAGE value="Changes:&#10;* added missing exceptions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;* added missing exceptions" />
+    <MESSAGE value="Changes:&#10;* addded new functionality. &#10;- will let user decide which file to load&#10;- will save to that file after that too. &#10;- if file doesn't exist, it will create it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;* addded new functionality. &#10;- will let user decide which file to load&#10;- will save to that file after that too. &#10;- if file doesn't exist, it will create it." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -699,13 +712,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/oliviercheah/tojava/utils/Ui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -778,10 +784,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/oliviercheah/tojava/utils/Ui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/TaskManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+        <state relative-caret-position="136">
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6260#6261#0" expanded="true" />

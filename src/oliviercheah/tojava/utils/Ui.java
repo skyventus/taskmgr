@@ -28,6 +28,22 @@ public class Ui {
         return in.nextLine().trim();
     }
 
+    public static void showCommands(){
+        System.out.println("1. todo <input task>");
+        System.out.println("--Example: todo submit report");
+        System.out.println("2. deadline <input task> /by <date>");
+        System.out.println("--Example: deadline submit report /by 11-11-2018");
+        System.out.println("3. update <The task index>");
+        System.out.println("--Example: update 1");
+        System.out.println("4. Delete <The task index>");
+        System.out.println("--Example: delete 1");
+        System.out.println("5. done <the task index>");
+        System.out.println("--Example: done 1");
+        System.out.println("6. print");
+        System.out.println("7. save");
+        System.out.println("8. exit");
+    }
+
     public static void showToUser(String message){
         System.out.println(message);
     }
