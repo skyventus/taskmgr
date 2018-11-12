@@ -21,13 +21,16 @@ public class Storage {
 
     public Storage(String filePath){
         this.filePath = filePath;
-    };
+        File directory = new File(filePath);
+        if(! directory.exists())
+            directory.mkdir();
+    }
 
     public Tasklist load(String NewFilepath) throws IOException, TaskManagerException {
+        //check directory
         this.filePath=NewFilepath;
         String[] task;
         File f = new File(filePath); // create a File for the given file path
-        f.getParentFile().mkdirs();
         f.createNewFile();
         Scanner s = new Scanner(f); // create a Scanner using the File as the source
         int idx = 1;
