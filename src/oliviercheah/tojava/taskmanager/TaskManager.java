@@ -35,9 +35,9 @@ public class TaskManager {
                     System.exit(0);
                 }
                 tasks=storage.load(filepath+"/"+choice);
-                Ui.showToUser("Number of Completed Task: " + tasks.numberOfCompletedTask());
-                Ui.showToUser("Number of Incompleted Task: " + tasks.numberOfInompletedTask());
-                Ui.showToUser("Total number of task recorded: " + tasks.getSize());
+                Ui.showToUser("-Number of Completed Task: " + tasks.numberOfCompletedTask());
+                Ui.showToUser("--Number of Incompleted Task: " + tasks.numberOfInompletedTask());
+                Ui.showToUser("---Total number of task recorded: " + tasks.getSize());
                 tasks.getExpiry();
             } catch (IOException e) {
                 Ui.printError("{WARNING]: Unable to locate the file. New file has been generated in data folder");
