@@ -16,21 +16,31 @@ public class TaskManager {
     private Tasklist tasks;
     private Storage storage;
 
+
     public TaskManager(String filepath){
         ui = new Ui();
         storage = new Storage(filepath);
-            try {
-                tasks = storage.load();
+        storage.listFiles();
+        Ui.showToUser("Please key in the filename to load.");
+
+        String choice = ui.readUserChoice().toLowerCase();
+
+        while(choice.isEmpty()) {
+                Ui.showToUser("Please key in the filename or the new filename that you want to create/load.");
+                choice = ui.readUserChoice().toLowerCase();
+        }try {
+                if(! choice.contains(".txt"))
+                    choice = choice+".txt";
+                tasks=storage.load(filepath+"/"+choice);
                 Ui.showToUser("Number of Completed Task: " + tasks.numberOfCompletedTask());
                 Ui.showToUser("Number of Incompleted Task: " + tasks.numberOfInompletedTask());
                 Ui.showToUser("Total number of task recorded: " + tasks.getSize());
                 tasks.getExpiry();
-            } catch (TaskManagerException e) {
-                ui.showToUser("[ERROR] Problem reading file. Starting with an empty task list");
-                tasks = new Tasklist();
             } catch (IOException e) {
-                ui.printError(e.getMessage());
-            }
+                Ui.printError("{WARNING]: Unable to locate the file. New file has been generated in data folder");
+            } catch (TaskManagerException e) {
+                Ui.printError("{ERROR]: Unable to locate the file, no tasks has been added.");
+        }
     }
 
     public void run(){
@@ -60,16 +70,16 @@ public class TaskManager {
                             if(Description.isEmpty())
                                 throw new TaskManagerException("[ERROR] Did not input any tasks");
                             //System.out.println(Description);
-                                date = df.parse(by);
+                            date = df.parse(by);
                             tasks.addTask(Parser.createDeadline(Description, date));
                             Ui.showToUser("Deadline Task has been successfully added.");
-                            }catch(ParseException e){
-                                Ui.printError("[ERROR] Please ensure the Date format is dd-mm-yyyy");
-                    }
+                        }catch(ParseException e){
+                            Ui.printError("[ERROR] Please ensure the Date format is dd-mm-yyyy");
+                        }
                         break;
                     case ("print"):
                         if(tasks.isEmpty())
-                            throw new TaskManagerException("[WARNING] The list is empty. Nothing to print at the moment.");
+                            throw new TaskManagerException("[WARNING] The list is empty. Nothing to be print.");
                         tasks.printTasks();
                         break;
                     case ("update"):
@@ -85,8 +95,10 @@ public class TaskManager {
                         tasks.completedTask(idx);
                         break;
                     case ("save"):
-                        if(tasks.isEmpty())
-                            throw new TaskManagerException("[WARNING] The list is empty. No tasks to be saved.");
+                        if(tasks.isEmpty()) {
+                            Ui.showToUser("[INFO] No task in list to be saved.");
+                            break;
+                        }
                         storage.save(tasks);
                         Ui.showToUser("All tasks has been saved.");
                         break;
@@ -97,7 +109,7 @@ public class TaskManager {
                         tasks.deleteTask(idx);
                         break;
                     default:
-                        Ui.showToUser("[WARNING] No such command exist. test");
+                        Ui.showToUser("[WARNING] No such command exist.");
                         break;
                 }
             }catch(StringIndexOutOfBoundsException e){
@@ -113,24 +125,20 @@ public class TaskManager {
         }
 
         if(tasks.isEmpty()) {
-            try {
-                throw new TaskManagerException("[WARNING] The list is empty. No tasks to be saved.");
-            } catch (TaskManagerException e) {
-                e.printStackTrace();
-            }
+            Ui.showToUser("[INFO] No task in list to be saved.");
         }else {
-                Ui.showToUser("You have exited the TaskManager. All your tasks has been saved.");
-                storage.save(tasks);
+            Ui.showToUser("You have exited the TaskManager. All your tasks has been saved.");
+            storage.save(tasks);
         }
 
 
 
-       // System.out.println(Parser.createTodo(fullCommand));
+        // System.out.println(Parser.createTodo(fullCommand));
 
-       // tasks
+        // tasks
     }
 
     public static void main(String[] args) {
-        new TaskManager("data/task.txt").run();
+        new TaskManager("data").run();
     }
 }

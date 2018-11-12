@@ -23,14 +23,17 @@ public class Storage {
         this.filePath = filePath;
     };
 
-    public Tasklist load() throws IOException, TaskManagerException {
+    public Tasklist load(String NewFilepath) throws IOException, TaskManagerException {
+        this.filePath=NewFilepath;
         String[] task;
         File f = new File(filePath); // create a File for the given file path
+        f.getParentFile().mkdirs();
+        f.createNewFile();
         Scanner s = new Scanner(f); // create a Scanner using the File as the source
         int idx = 1;
         tasks = new Tasklist();
         if(! s.hasNext()){
-            throw new TaskManagerException("Error reading the file");
+            System.out.println("No tasks to load");
         }
         while(s.hasNext()){
             task = s.nextLine().split(Pattern.quote("|"));
@@ -57,18 +60,21 @@ public class Storage {
 
     public void save(Tasklist tasks){
         FileWriter fw ;
-        try {
-            fw = new FileWriter(filePath);
-            for(int i=0; i<tasks.getSize(); i++){
-                fw.write(tasks.saveTask(i));
+        if(tasks.isEmpty()){
+            System.out.println("[INFO] No tasks in the file to save");
+        }else {
+            try {
+                fw = new FileWriter(filePath);
+                for (int i = 0; i < tasks.getSize(); i++) {
+                    fw.write(tasks.saveTask(i));
+                }
+                fw.close();
+            } catch (IOException e) {
+                e.getMessage();
+            } catch (ArrayIndexOutOfBoundsException e) {
+                e.getMessage();
             }
-            fw.close();
-        } catch (IOException e) {
-            e.getMessage();
-        } catch (ArrayIndexOutOfBoundsException e){
-            e.getMessage();
         }
-
     }
 
     public void listFiles(){
