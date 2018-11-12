@@ -86,6 +86,7 @@ public class TaskManager {
                         if(tasks.isEmpty())
                             throw new TaskManagerException("[WARNING] The list is empty. No tasks to be saved.");
                         storage.save(tasks);
+                        Ui.showToUser("All tasks has been saved.");
                         break;
                     case ("delete"):
                         if(tasks.isEmpty())
