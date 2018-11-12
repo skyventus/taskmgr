@@ -49,6 +49,7 @@ public class TaskManager {
                         if(Description.isEmpty())
                             throw new TaskManagerException("[ERROR] Did not input any tasks");
                         tasks.addTask(Parser.createTodo(Description));
+                        Ui.showToUser("Todo has been successfully added.");
                         break;
                     case ("deadline"):
                         String by = fullCommand.substring(fullCommand.indexOf("/by")).replace("/by", "").trim();
@@ -61,6 +62,7 @@ public class TaskManager {
                             //System.out.println(Description);
                                 date = df.parse(by);
                             tasks.addTask(Parser.createDeadline(Description, date));
+                            Ui.showToUser("Deadline Task has been successfully added.");
                             }catch(ParseException e){
                                 Ui.printError("[ERROR] Please ensure the Date format is dd-mm-yyyy");
                     }
