@@ -68,6 +68,8 @@ public class TaskManager {
                     }
                         break;
                     case ("print"):
+                        if(tasks.isEmpty())
+                            throw new TaskManagerException("[WARNING] The list is empty. Nothing to print at the moment.");
                         tasks.printTasks();
                         break;
                     case ("update"):
