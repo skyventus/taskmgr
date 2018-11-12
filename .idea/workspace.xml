@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f5e1900a-864f-428a-9f03-96fc9a97bc71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/oliviercheah/tojava/utils/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oliviercheah/tojava/utils/Storage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +23,7 @@
     <session id="2055484750">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
+          <entry key="project.closed" value="22" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.13" value="1" />
@@ -312,7 +311,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542005439927" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542006686938" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last.edited.regexp" value="|123|123" />
@@ -449,7 +448,7 @@
       <workItem from="1540616182841" duration="848000" />
       <workItem from="1541745227370" duration="3341000" />
       <workItem from="1541989205942" duration="3629000" />
-      <workItem from="1542006317915" duration="338000" />
+      <workItem from="1542006317915" duration="425000" />
     </task>
     <task id="LOCAL-00001" summary="First commit.">
       <created>1539085276285</created>
@@ -549,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542005448260</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Changes:&#10;* addded new functionality. &#10;- will let user decide which file to load&#10;- will save to that file after that too. &#10;- if file doesn't exist, it will create it.">
+      <created>1542006677481</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1542006677481</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -585,7 +591,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121103000" />
+    <option name="totallyTimeSpent" value="121190000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,7 +604,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4972299" visible="true" weight="0.3456376" />
       <window_info id="Structure" order="1" sideWeight="0.50392157" side_tool="true" weight="0.3409396" />

@@ -1,0 +1,5 @@
+T | 1 | buy apple x5
+T | 0 | buy orange x2
+T | 1 | buy present for mom
+D | 0 | submit java report today | 12-11-2018
+D | 0 | buy xmas present | 01-12-2018
