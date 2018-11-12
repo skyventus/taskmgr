@@ -94,7 +94,6 @@ public class TaskManager {
                         tasks.deleteTask(idx);
                         break;
                     default:
-
                         Ui.showToUser("[WARNING] No such command exist. test");
                         break;
                 }
@@ -109,6 +108,18 @@ public class TaskManager {
             fullCommand = ui.readUserCommand().toLowerCase();
             commandWord = Parser.getCommandWord(fullCommand);
         }
+
+        if(tasks.isEmpty()) {
+            try {
+                throw new TaskManagerException("[WARNING] The list is empty. No tasks to be saved.");
+            } catch (TaskManagerException e) {
+                e.printStackTrace();
+            }
+        }else {
+                Ui.showToUser("You have exited the TaskManager. All your tasks has been saved.");
+                storage.save(tasks);
+        }
+
 
 
        // System.out.println(Parser.createTodo(fullCommand));

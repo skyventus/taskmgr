@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e1900a-864f-428a-9f03-96fc9a97bc71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/TaskManager.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/TaskManager.java" afterDir="false" />
     </list>
@@ -47,15 +45,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="java" value="14612" />
+          <entry key="java" value="14756" />
           <entry key="regexp" value="51" />
-          <entry key="txt" value="674" />
+          <entry key="txt" value="691" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14612" />
-          <entry key="PLAIN_TEXT" value="682" />
+          <entry key="JAVA" value="14756" />
+          <entry key="PLAIN_TEXT" value="699" />
           <entry key="RegExp" value="51" />
         </counts>
       </usages-collector>
@@ -82,12 +80,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/TaskManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+            <state relative-caret-position="364">
+              <caret line="114" column="28" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5159#5160#0" expanded="true" />
-                <element signature="e#5204#5205#0" expanded="true" />
+                <element signature="e#5738#5739#0" expanded="true" />
+                <element signature="e#5792#5793#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -405,7 +403,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541990559791" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541992624971" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last.edited.regexp" value="|123|123" />
@@ -541,7 +539,7 @@
       <workItem from="1540290933006" duration="6246000" />
       <workItem from="1540616182841" duration="848000" />
       <workItem from="1541745227370" duration="3341000" />
-      <workItem from="1541989205942" duration="1315000" />
+      <workItem from="1541989205942" duration="3076000" />
     </task>
     <task id="LOCAL-00001" summary="First commit.">
       <created>1539085276285</created>
@@ -599,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541989454989</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Changes:&#10;* Compiled as JAR">
+      <created>1541990620762</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1541990620762</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -635,7 +640,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114850000" />
+    <option name="totallyTimeSpent" value="116611000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -648,9 +653,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3409396" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3409396" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -659,7 +663,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32963988" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" weight="0.19390582" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" visible="true" weight="0.19390582" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -722,7 +726,8 @@
     <MESSAGE value="Changes:&#10;* Deadline - Deadline to Date format&#10;* able to get what are the tasks that are expiring&#10;* How many completed/incompleted task" />
     <MESSAGE value="Changes:&#10;* To github sync for the first time&#10;* added more functionality for deadline. &#10;- able to get duedays &#10;- able to alert user if is the task is about to due" />
     <MESSAGE value="Changes:&#10;* Push all the updated structure." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;* Push all the updated structure." />
+    <MESSAGE value="Changes:&#10;* Compiled as JAR" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;* Compiled as JAR" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -852,12 +857,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/oliviercheah/tojava/taskmanager/TaskManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+        <state relative-caret-position="364">
+          <caret line="114" column="28" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5159#5160#0" expanded="true" />
-            <element signature="e#5204#5205#0" expanded="true" />
+            <element signature="e#5738#5739#0" expanded="true" />
+            <element signature="e#5792#5793#0" expanded="true" />
           </folding>
         </state>
       </provider>
