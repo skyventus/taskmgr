@@ -2,6 +2,7 @@ package oliviercheah.tojava.taskmanager;
 import oliviercheah.tojava.utils.Parser;
 import oliviercheah.tojava.utils.Storage;
 import oliviercheah.tojava.utils.Ui;
+import org.omg.CORBA.ARG_IN;
 
 import java.io.IOException;
 import java.lang.*;
@@ -29,11 +30,10 @@ public class TaskManager {
                 Ui.showToUser("Please key in the filename or the new filename that you want to create/load.");
                 choice = ui.readUserChoice().toLowerCase();
         }try {
-                if(! choice.contains(".txt") && !choice.contains("exit"))
-                    choice = choice+".txt";
-                else {
+                if(choice.equals("exit"))
                     System.exit(0);
-                }
+                if(! choice.contains(".txt") )
+                    choice = choice+".txt";
                 tasks=storage.load(filepath+"/"+choice);
                 Ui.showToUser("-Number of Completed Task: " + tasks.numberOfCompletedTask());
                 Ui.showToUser("--Number of Incompleted Task: " + tasks.numberOfInompletedTask());
@@ -87,6 +87,8 @@ public class TaskManager {
                         break;
                     case ("update"):
                         idx = Integer.parseInt(fullCommand.replace("update","").trim());
+                        if(idx>tasks.getSize())
+                            throw new TaskManagerException("[ERROR] No such tasks index exists");
                         Ui.showToUser("What is the new task?");
                         Description=ui.readUserCommand();
                         tasks.updateTask(idx, Description);
@@ -124,6 +126,10 @@ public class TaskManager {
                 Ui.printError(e.getMessage());
             }catch(NumberFormatException e){
                 Ui.printError("[ERROR] Please key in the task number that you want to mark as complete.");
+            }catch(ArrayIndexOutOfBoundsException e){
+                Ui.printError("[ERROR] No such task found. Please try again.");
+            }catch(IndexOutOfBoundsException e){
+                Ui.printError("[ERROR] No such task found. Please try again.");
             }
 
             fullCommand = ui.readUserCommand().toLowerCase();

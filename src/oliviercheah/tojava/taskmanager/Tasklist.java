@@ -66,8 +66,12 @@ public class Tasklist {
     }
 
     public void updateTask(int idx, String desc){
-        tasks.get(idx-1).updateTask(desc);
-        System.out.println("Task Update completed.");
+        try {
+            tasks.get(idx - 1).updateTask(desc);
+            System.out.println("Task Update completed.");
+        }catch (IndexOutOfBoundsException e){
+            System.out.println("Please key in the correct task index.");
+        }
     }
 
     public void getExpiry() {
